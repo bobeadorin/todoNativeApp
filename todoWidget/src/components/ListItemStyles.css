@@ -1,0 +1,67 @@
+.list-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.list-item-container.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.list-item-content {
+  margin: 0;
+  font-size: 14px;
+  color: #e0e0e0;
+  word-break: break-all;
+  flex: 1;
+  padding-right: 10px;
+}
+
+.list-item-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #646cff;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  padding: 2px 4px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.list-item-action-btns {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Reset default button styling */
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon-btn.edit:hover { color: #646cff; }
+.icon-btn.save:hover { color: #42b883; }
+.icon-btn.cancel:hover { color: #ff5555; }
+.icon-btn.done:hover, .icon-btn.done.active { color: #42b883; }
+.icon-btn.delete:hover { color: #ff5555; }

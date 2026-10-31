@@ -1,0 +1,113 @@
+html, body {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Outer container handling the slide animation */
+/* Outer container handling the slide animation */
+.popup-container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0px; /* was 12px, this was the empty border */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  pointer-events: none;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+/* State when opening / visible */
+.slide-up {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* State when closing */
+.slide-down {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Inner card styling matching your window proportions */
+.popup-content {
+  background: #1e1e1e;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  padding: 20px;
+  box-sizing: border-box;
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
+
+  /* CRITICAL FIX: Re-enables clicks for everything inside your card */
+  pointer-events: auto; 
+}
+
+.todo-input-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.todo-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.todo-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+  opacity: 1;
+}
+
+.todo-input:focus {
+  border-color: #646cff;
+}
+
+.add-btn {
+  background: #646cff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.add-btn:hover {
+  background: #535bf2;
+}
+
+.add-btn:active {
+  transform: scale(0.95);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 500px;
+  overflow-y: auto;
+}
